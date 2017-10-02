@@ -20,8 +20,18 @@ def replaceSpaces(str, length):
     else:
       listArr[numLength-1] = listArr[i]
       numLength = numLength-1
+  return ''.join(listArr)
       
-  return ''.join(listArr)    
+  #SOLUTION II
+  listarr = [c for c in str]
+  for i in range ( 0, len(str), 1):
+    if listarr[i] ==' ':
+      listarr.pop(i)
+      listarr.insert(i, '%20')
+  print(''.join(listarr))
+      
+replacespaces("i am a human", 12)      
+  
   
 print(replaceSpaces("I am a human", 12))  
    
