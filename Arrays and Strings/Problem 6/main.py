@@ -3,6 +3,7 @@
 # degrees.
 
 def rotate(matrix, n):
+  # for a nxn matrix, there will be n/2 layers
   y = n // 2
   for layer in range(0,y):
     first = layer
