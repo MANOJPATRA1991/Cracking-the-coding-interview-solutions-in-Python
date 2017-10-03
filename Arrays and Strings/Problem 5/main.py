@@ -22,4 +22,20 @@ def compress(s):
   # else:
   #   print(res)
   
+  
+  # SOLUTION II
+  #   res = ''
+  #   last = s[0]
+  #   count = 1
+  #   for i in range(1, len(s)):
+  #     if s[i] == last:
+  #       count += 1
+  #     else:
+  #       res += last + str(count)
+  #       last = s[i]
+  #       count = 1
+  #   res += last + str(count)
+
+  #   print(res)
+  
 compress('abccd')
