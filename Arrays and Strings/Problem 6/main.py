@@ -22,4 +22,5 @@ x = [ ['p00', 'p01', 'p02', 'p03'],
       ['p20', 'p21', 'p22', 'p23'],
       ['p30', 'p31', 'p32', 'p33'] ]
 
-print(rotate(x, 4))
+for i in rotate(x,4):
+  print(i)
