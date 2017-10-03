@@ -23,7 +23,7 @@ def replaceSpaces(str, length):
   #     numLength = numLength-1
   # return ''.join(listArr)
       
-  #SOLUTION II
+  # SOLUTION II
   # listarr = [c for c in str]
   # for i in range ( 0, len(str), 1):
   #   if listarr[i] ==' ':
@@ -31,6 +31,12 @@ def replaceSpaces(str, length):
   #     listarr.insert(i, '%20')
   # print(''.join(listarr))
       
+  # SOLUTION III
+  # print('%20'.join(s.split(' ')))
+  
+  # SOLUTION IV
+  # print(s.replace(' ', '%20')
+    
 replacespaces("i am a human", 12)      
   
   
