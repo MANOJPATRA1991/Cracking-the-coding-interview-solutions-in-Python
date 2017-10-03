@@ -24,6 +24,9 @@ def compress(s):
   
   
   # SOLUTION II
+  #
+  # TIME COMPLEXITY = O(p + k^2), p = length of string, k = number of character sequences
+  #
   #   res = ''
   #   last = s[0]
   #   count = 1
