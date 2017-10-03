@@ -1,3 +1,6 @@
+# TIME COMPLEXITY = O(N)
+# SPACE COMPLEXITY = O(N)
+
 def compressBetter(s):
   # check if compression would create a longer string
   size = countCompression(s)
