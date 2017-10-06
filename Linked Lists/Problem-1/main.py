@@ -2,6 +2,8 @@
 
 from main.linkedList import LinkedList, Element 
 
+# SOLUTION I
+# TIME COMPLEXITY = O(N)
 def removeDuplicate(n):
   if not n.is_empty():
     curr = n.head
@@ -13,6 +15,19 @@ def removeDuplicate(n):
         dic[curr.next.value] = True
         curr = curr.next
         
+# SOLUTION II
+#TIME COMPLEXITY = O(N^2)
+def removeDuplicate(linkedlist):
+  currNode = linkedlist.head
+  while currNode != None:
+      runner = currNode
+      while runner.next != None:
+          if runner.next.value == currNode.value:
+              runner.next = runner.next.next
+          else:
+              runner = runner.next
+      currNode = currNode.next
+
 e1 = Element(1)
 e2 = Element(2)
 e3 = Element(3)
