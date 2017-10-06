@@ -2,6 +2,11 @@
 # the image is 4 bytes, write a method to rotate the image by 90
 # degrees.
 
+
+# TIME COMPLEXITY = O(N^2),
+# as we need to touch N^2 elements
+
+
 def rotate(matrix, n):
   # for a nxn matrix, there will be n/2 layers
   y = n // 2
