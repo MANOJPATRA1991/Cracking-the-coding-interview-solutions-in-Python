@@ -3,6 +3,8 @@ from main.linkedList import LinkedList, Element;
 
 # Implement an algorithm to find the kth to last element of a singly linked list
 
+# Recursive solutions take O(N) space due to recursive calls
+
 # SOLUTION I -- RECURSIVE
 # Here we assume k = 1 is the last element, k = 2 is the second last element and so on.
 def nthToLast(head, k):
@@ -12,6 +14,24 @@ def nthToLast(head, k):
   if i == k:
     print(head.value)
   return i
+
+# SOLUTION II -- RECURSIVE
+# Here we assume k = 1 is the last element, k = 2 is the second last element and so on.
+# We make use of a wrapper object
+class IntWrapper(object):
+  def __init__(self):
+    self.value = 0
+  
+def nthToLast2(head, k, i):
+  if head is None:
+    return 0
+  nthToLast2(head.next, k, i)
+  i.value += 1
+  if i.value == k:
+    print(head.value)
+  return
+
+wrapper = IntWrapper()
 
 e1 = Element(1)
 e2 = Element(2)
@@ -39,4 +59,5 @@ ll.append(e10)
 ll.append(e11)
 ll.append(e12)
 
-nthToLast(ll.head, 4)
+# nthToLast(ll.head, 4)
+nthToLast2(ll.head, 4, wrapper)
