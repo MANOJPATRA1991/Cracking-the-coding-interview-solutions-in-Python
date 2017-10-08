@@ -31,6 +31,23 @@ def nthToLast2(head, k, i):
     print(head.value)
   return
 
+# SOLUTION III
+# Iterative Solution
+# TIME COMPLEXITY = O(N)
+# SPACE COMPLEXITY = O(1)
+def nthToLast3(head, k):
+  p1 = p2 = head
+  for i in range(k-1):
+    if p2 is None:
+      return 0
+    p2 = p2.next
+  
+  while p2.next is not None:
+    p1 = p1.next
+    p2 = p2.next
+  
+  return p1.value
+
 wrapper = IntWrapper()
 
 e1 = Element(1)
@@ -60,4 +77,5 @@ ll.append(e11)
 ll.append(e12)
 
 # nthToLast(ll.head, 4)
-nthToLast2(ll.head, 4, wrapper)
+# nthToLast2(ll.head, 4, wrapper)
+print(nthToLast3(ll.head, 3))
