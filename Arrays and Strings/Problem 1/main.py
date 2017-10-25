@@ -1,5 +1,4 @@
 # Algorithm to check if a string has all unique characters
-import sys
 
 
 def is_unique_string(str):

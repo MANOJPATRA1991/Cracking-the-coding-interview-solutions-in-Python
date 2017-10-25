@@ -1,16 +1,16 @@
 # Implement a function to reverse a string
 
 
-def rev(str):
+def rev(s):
     """
     A function to reverse a string
     Args:
-        str(string): The string to reverse
+        s(string): The string to reverse
     Returns:
         string: The reversed string
     """
     # SOLUTION I
-    return ''.join(reversed(str))
+    return ''.join(reversed(s))
 
     # SOLUTION II
     # return str[::-1]
