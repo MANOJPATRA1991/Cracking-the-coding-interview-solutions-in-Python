@@ -17,7 +17,7 @@ def get_height(root):
     """
     if root is None:
         return 0
-    return max(get_height(root.getLeftChild()), get_height(root.getRightChild())) + 1
+    return max(get_height(root.get_left_child()), get_height(root.get_right_child())) + 1
 
 
 def is_balanced(root):
@@ -30,24 +30,24 @@ def is_balanced(root):
     """
     if root is None:
         return True
-    height_diff = get_height(root.getLeftChild()) - get_height(root.getRightChild())
+    height_diff = get_height(root.get_left_child()) - get_height(root.get_right_child())
     if abs(height_diff) > 1:
         return False
     else:
-        return is_balanced(root.getLeftChild()) and is_balanced(root.getRightChild())
+        return is_balanced(root.get_left_child()) and is_balanced(root.get_right_child())
 
 r = BinaryTree('a')
-print(r.getRootVal())
-print(r.getLeftChild())
-r.insertLeft('b')
-print(r.getLeftChild())
-print(r.getLeftChild().getRootVal())
-r.insertRight('c')
-r.insertRight('c')
-r.insertRight('c')
-print(r.getRightChild())
-print(r.getRightChild().getRootVal())
-r.getRightChild().setRootVal('hello')
-print(r.getRightChild().getRootVal())
+print(r.get_root_val())
+print(r.get_left_child())
+r.insert_left('b')
+print(r.get_left_child())
+print(r.get_left_child().get_root_val())
+r.insert_right('c')
+r.insert_right('c')
+r.insert_right('c')
+print(r.get_right_child())
+print(r.get_right_child().get_root_val())
+r.get_right_child().set_root_val('hello')
+print(r.get_right_child().get_root_val())
 
 print(is_balanced(r))

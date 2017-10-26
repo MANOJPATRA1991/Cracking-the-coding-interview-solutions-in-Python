@@ -23,12 +23,12 @@ def check_height(root):
         return 0
 
     # Check if left subtree is balanced
-    left_height = check_height(root.getLeftChild())
+    left_height = check_height(root.get_left_child())
     if left_height == -1:
         return -1
 
     # Check if right child is unbalanced
-    right_height = check_height(root.getRightChild())
+    right_height = check_height(root.get_right_child())
     if right_height == -1:
         return -1
 
@@ -53,15 +53,15 @@ def is_balanced(root):
 
 
 r = BinaryTree('a')
-print(r.getRootVal())
-print(r.getLeftChild())
-r.insertLeft('b')
-print(r.getLeftChild())
-print(r.getLeftChild().getRootVal())
-r.insertRight('c')
-print(r.getRightChild())
-print(r.getRightChild().getRootVal())
-r.getRightChild().setRootVal('hello')
-print(r.getRightChild().getRootVal())
+print(r.get_root_val())
+print(r.get_left_child())
+r.insert_left('b')
+print(r.get_left_child())
+print(r.get_left_child().get_root_val())
+r.insert_right('c')
+print(r.get_right_child())
+print(r.get_right_child().get_root_val())
+r.get_right_child().set_root_val('hello')
+print(r.get_right_child().get_root_val())
 
 print(is_balanced(r))
