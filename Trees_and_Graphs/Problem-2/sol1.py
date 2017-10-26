@@ -19,6 +19,9 @@ class DFSGraph(Graph):
         Args:
             start_vertex(Vertex): The starting node for DFS
             end_vertex(Vertex): The end point in the path
+        Returns:
+            Boolean: Indicates if a path exists between
+                start and end vertices
         """
         # Run-time => O(E) for the for loop
         #
@@ -30,12 +33,14 @@ class DFSGraph(Graph):
         start_vertex.setColor('gray')
         for v in start_vertex.getConnections():
             if v.getColor() == 'white':
+                print(v.id, v.color)
                 v.setPredecessor(start_vertex)
                 if v == end_vertex:
                     return True
                 else:
                     v.setColor('gray')
-                    self.dfs_visit(v, end_vertex)
+                    res = self.dfs_visit(v, end_vertex)
+                    return res
         return False
 
 
@@ -70,16 +75,16 @@ g.add_edge(b.id, d.id, 2)
 g.add_edge(c.id, a.id, 5)
 g.add_edge(c.id, b.id, 3)
 g.add_edge(c.id, d.id, 3)
-g.add_edge(c.id, e.id, 1)
+# g.add_edge(c.id, e.id, 1)
 g.add_edge(c.id, f.id, 5)
 g.add_edge(d.id, a.id, 1)
 g.add_edge(d.id, b.id, 2)
 g.add_edge(d.id, c.id, 3)
-g.add_edge(d.id, e.id, 1)
+# g.add_edge(d.id, e.id, 1)
 g.add_edge(e.id, d.id, 1)
 g.add_edge(e.id, c.id, 1)
 g.add_edge(e.id, f.id, 1)
 g.add_edge(f.id, c.id, 5)
 g.add_edge(f.id, e.id, 1)
 
-print(g.dfs_visit(g.get_vertex(a.id), g.get_vertex(c.id)))
+print(g.dfs_visit(g.get_vertex(a.id), g.get_vertex(e.id)))
