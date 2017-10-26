@@ -11,10 +11,12 @@ class WrapperInt:
     Attributes:
         index(int): To keep track of index of list to copy to
         count(int): To count the number of nodes in the tree
+        val(int): Keep track of last tracked value in check_bst2()
     """
     def __init__(self):
         self.index = 0
         self.count = 0
+        self.val = None
 
 wrap = WrapperInt()
 
@@ -66,10 +68,38 @@ def check_bst(root):
     return True
 
 
+# SOLUTION II
+def check_bst2(root):
+    """
+    Check if tree is a BST
+    Args:
+        root(BinaryTree): Root of the binary tree
+    """
+
+    if root is None:
+        return True
+
+    # Check left subtree
+    if not check_bst2(root.left_child):
+        return False
+
+    # Check current node
+    if wrap.val is not None and root.get_root_val() <= wrap.val:
+        return False
+
+    wrap.val = root.get_root_val()
+
+    # Check right subtree
+    if not check_bst2(root.right_child):
+        return False
+
+    return True
+
+
 r = BinaryTree(5)
 r.insert_left(3)
 r.insert_right(7)
 r.get_left_child().insert_left(1)
 r.get_left_child().insert_right(4)
-
 print(check_bst(r))
+print(check_bst2(r))
