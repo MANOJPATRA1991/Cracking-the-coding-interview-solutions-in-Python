@@ -1,6 +1,7 @@
 from Trees_and_Graphs.tree.main import BinaryTree
 # Implement a function to check if a binary tree is a BST
 # In a BST: left <= parent < right
+# This solution fails if duplicate elements are present in the binary tree
 # SOLUTION 1: In-order traversal
 
 
