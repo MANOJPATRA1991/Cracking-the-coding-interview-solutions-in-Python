@@ -54,5 +54,6 @@ ll.append(e7)
 result = partition(ll.head, 5)
 
 while result is not None:
-    print(result.value)
+    print(result.value, '-> ', end='')
     result = result.next
+print(None)

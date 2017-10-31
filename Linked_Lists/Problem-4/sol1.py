@@ -24,7 +24,6 @@ def partition(node, x):
     after_start = None
     after_end = None
 
-
     while node is not None:
         nxt = node.next
         node.next = None
@@ -69,5 +68,6 @@ ll.append(e7)
 result = partition(ll.head, 5)
 
 while result is not None:
-    print(result.value)
+    print(result.value, '-> ', end='')
     result = result.next
+print(None)
