@@ -1,9 +1,17 @@
-# A function to add two numbers stored in a linked list in reverse order
+# A function to add two numbers stored in linked lists in reverse order
 # and return the result as a linked list
+
 from Linked_Lists.main.linkedList import LinkedList, Element
 
 
 class Result(object):
+    """
+    Helper class to add two numbers in linked lists
+    Attributes:
+        node(Element): The node to add to ll
+        carry(Integer): Holds the carry
+        ll(LinkedList): The resultant linked list
+    """
     def __init__(self, node=None, carry=0):
         self.node = node
         self.carry = carry
