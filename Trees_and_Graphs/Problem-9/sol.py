@@ -81,4 +81,4 @@ tree1.left_child.right_child.insert_right(9)
 tree1.right_child.insert_left(13)
 tree1.right_child.insert_right(17)
 
-main(tree1, 24)
+main(tree1, 25)
