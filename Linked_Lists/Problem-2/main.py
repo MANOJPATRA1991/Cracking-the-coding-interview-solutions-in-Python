@@ -1,4 +1,4 @@
-from ..main.linkedList import LinkedList, Element
+from Linked_Lists.main.linkedList import LinkedList, Element
 
 
 # Implement an algorithm to find the kth to last element of a singly linked list
