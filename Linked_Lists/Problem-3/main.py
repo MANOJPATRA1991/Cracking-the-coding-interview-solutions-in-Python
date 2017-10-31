@@ -1,14 +1,18 @@
-from ..main.linkedList import LinkedList, Element
-# Implement an algorithm to to delete a node in the middle of a singly linked list, given only access to that node
+from Linked_Lists.main.linkedList import LinkedList, Element
+# Implement an algorithm to to delete a node in the middle of a singly linked list,
+# given only access to that node
 
 # TIP: This problem cannot be solved if the given node is the last node
 
+
 def delete_node(n):
-    if n is not None and n.next is not None:
-        n.value = n.next.value
-        n.next = n.next.next
-    return
-    
+    if n is not None:
+        if n.next is not None:
+            n.value = n.next.value
+            n.next = n.next.next
+        # if given node is the last one, no way to delete it
+        else:
+            n.value = None
   
 e1 = Element(1)
 e2 = Element(2)
