@@ -10,6 +10,13 @@ from Linked_Lists.main.linkedList import LinkedList, Element
 
 
 def find_beginning(head):
+    """
+    Find the beginning of the loop in a linked list
+    Args:
+        head(Element): The head of the linked list
+    Returns:
+        Integer/None
+    """
     # Step 1
     slow = head
     fast = head
