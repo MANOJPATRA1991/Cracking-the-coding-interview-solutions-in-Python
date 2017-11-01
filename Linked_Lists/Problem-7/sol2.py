@@ -14,6 +14,7 @@ def check_palindrome(ll):
     fast = ll.head
     slow = ll.head
 
+    # stack to store the first half of the linked list
     s = Stack()
 
     while fast is not None and fast.next is not None:
@@ -25,6 +26,8 @@ def check_palindrome(ll):
     if fast is not None:
         slow = slow.next
 
+    # compare the second half of the linked list with
+    # contents of the stack
     while slow is not None:
         top = s.pop()
         if top == slow.value:
