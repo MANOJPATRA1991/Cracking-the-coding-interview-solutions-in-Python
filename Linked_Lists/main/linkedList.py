@@ -154,16 +154,19 @@ class LinkedList(object):
 
         return count
 
-    def reverse(self):
+    @staticmethod
+    def reverse(ll):
         """
         Reverse the linked list
         """
+        lst = ll
         prev = None
-        current = self.head
+        current = lst.head
         while current is not None:
             nxt = current.next
             current.next = prev
             prev = current
             current = nxt
         # finally, reverse the head
-        self.head = prev
+        lst.head = prev
+        return lst
