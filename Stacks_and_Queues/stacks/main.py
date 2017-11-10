@@ -18,7 +18,8 @@ class Stack:
     def push(self, item):
         """
         Push item into the stack
-        Item(any): Item to push
+        Args:
+            item(any): Item to push
         """
         self.items.append(item)
 
