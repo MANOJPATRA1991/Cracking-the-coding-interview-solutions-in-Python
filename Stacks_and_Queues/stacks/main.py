@@ -2,10 +2,20 @@ class Stack:
     """
     Creates a Stack data structure
     Attributes:
-        items(List): A list instance to store stack items
+        items(List): A list instance to store stack items,
+        capacity(Integer): Capacity of each stack
     """
-    def __init__(self):
-        self.items = []
+    def __init__(self, capacity):
+        self.items = [0]*capacity
+        self.capacity = capacity
+
+    def is_full(self):
+        """
+        Checks if stack is full
+        Returns:
+            Boolean: Indicates if stack is full
+        """
+        return len(self.items) == self.capacity
 
     def is_empty(self):
         """
@@ -21,7 +31,8 @@ class Stack:
         Args:
             item(any): Item to push
         """
-        self.items.append(item)
+        if not self.is_full():
+            self.items.append(item)
 
     def pop(self):
         """
