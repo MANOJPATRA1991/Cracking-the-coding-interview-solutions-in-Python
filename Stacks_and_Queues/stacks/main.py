@@ -5,8 +5,11 @@ class Stack:
         items(List): A list instance to store stack items,
         capacity(Integer): Capacity of each stack
     """
-    def __init__(self, capacity):
-        self.items = [0]*capacity
+    def __init__(self, capacity=0):
+        if capacity == 0:
+            self.items = []
+        else:
+            self.items = [0] * capacity
         self.capacity = capacity
 
     def is_full(self):
@@ -15,7 +18,7 @@ class Stack:
         Returns:
             Boolean: Indicates if stack is full
         """
-        return len(self.items) == self.capacity
+        return not self.is_empty() and len(self.items) == self.capacity
 
     def is_empty(self):
         """
@@ -38,7 +41,8 @@ class Stack:
         """
         Pop item from the stack
         """
-        return self.items.pop()
+        if self.size() > 0:
+            return self.items.pop()
 
     def peek(self):
         """
