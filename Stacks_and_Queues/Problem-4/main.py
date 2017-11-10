@@ -1,3 +1,5 @@
+# Implement tower of hanoi using stackss
+
 from tower import Tower
 
 towers = [0]*3
