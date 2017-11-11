@@ -71,6 +71,14 @@ class LinkedList(object):
                 current = current.next
         return False
 
+    def peek(self):
+        """
+        Get a peek at the last element in the linked list
+        Returns:
+            Any: The value of the last element of the linked list
+        """
+        return self.head
+
     def insert(self, new_element, position):
         """
         Inserts a new element at a specified position in
@@ -117,6 +125,15 @@ class LinkedList(object):
         else:
             previous.next = current.next
             current.next = None
+
+    def remove_head(self):
+        """
+        Remove the head of the linked list
+        Returns:
+            Element: The head of the linked list
+        """
+        temp, self.head = self.head, self.head.next
+        return temp
 
     def pop(self):
         """
