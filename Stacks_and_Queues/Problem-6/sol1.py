@@ -6,6 +6,8 @@ from Stacks_and_Queues.stacks.main import Stack
 def sort_stack(s):
     """
     Sort a stack
+    Time complexity: O(N^2)
+    Space complexity: O(N)
      Args:
          s(Stack): The stack to sort
      Returns:
