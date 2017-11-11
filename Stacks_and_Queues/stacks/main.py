@@ -48,7 +48,8 @@ class Stack:
         """
         Peek last item in the stack
         """
-        return self.items[len(self.items) - 1]
+        if not self.is_empty():
+            return self.items[len(self.items) - 1]
 
     def size(self):
         """
