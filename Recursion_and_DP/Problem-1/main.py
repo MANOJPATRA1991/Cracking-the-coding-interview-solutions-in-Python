@@ -1,6 +1,6 @@
 # Recursive solution
 
-# Implement a method to count number of possible ways to run up a stair with n steps
+# Implement a method to count number of possible ways to run up a stair with n steps taking 1, 2 or 3 steps at a time
 
 # Runtime: O(3^n)
 
@@ -18,3 +18,5 @@ def count_ways(n):
         return 1
     else:
         return count_ways(n-1) + count_ways(n-2) + count_ways(n-3)
+
+print(count_ways(6))
