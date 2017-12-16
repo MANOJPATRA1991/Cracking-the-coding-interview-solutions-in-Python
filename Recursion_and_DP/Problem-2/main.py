@@ -67,9 +67,11 @@ class Grid(object):
         return math.factorial(end_x + end_y) // \
                (math.factorial(end_x) * math.factorial(end_y))
 
+    @memoize
     def get_path(self, row=0, col=0):
         """
         Return a path from (row, col) to (self.x - 1, self.y - 1)
+        Run time: O((X-1)*(Y-1))
         Args:
             row: Starting row number
             col: Starting column number
