@@ -6,6 +6,8 @@ def permutations(s):
     """
     Attributes:
         s(String): String of unique characters
+    Returns:
+        A generator of all permutations
     """
     if len(s) == 1:
         yield s
