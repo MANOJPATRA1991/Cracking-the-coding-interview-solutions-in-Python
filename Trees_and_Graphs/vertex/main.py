@@ -2,7 +2,7 @@ class Vertex:
     """
     Class representing vertices of the graph
     Attributes:
-        id(int/ string): The id of the vertex
+        id: The id of the vertex
         connectedTo(dict): Dictionary to keep track of the vertices
                         to which it is connected and the weight of each edge
         distance(int): Distance from the starting vertex used in BFS

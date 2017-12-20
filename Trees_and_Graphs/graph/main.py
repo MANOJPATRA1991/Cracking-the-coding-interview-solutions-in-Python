@@ -29,7 +29,7 @@ class Graph:
         """
         Get vertex from this Graph
         Args:
-            n(int): The key to search for in the Graph
+            n: The key to search for in the Graph
         Returns:
             Vertex: If key 'n' is in vertList, return vertList[n]; else return None
         """
