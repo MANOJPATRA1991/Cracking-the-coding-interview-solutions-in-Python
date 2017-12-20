@@ -49,9 +49,14 @@ LOGICAL_OPS['^'][False] = [(True, True), (False, False)]
 @memoize
 def parenthesize_count(exp, result):
     """
+    Calculates the number of ways of parenthesizing the expression so that
+    it evaluates to given result
     Args:
         exp(str): A boolean expression
         result(bool): Result of the boolean expression
+    Returns:
+        Integer: Number of ways of parenthesizing the expression so that
+    it evaluates to given result
     """
     if len(exp) == 1:
         value = int(exp)
