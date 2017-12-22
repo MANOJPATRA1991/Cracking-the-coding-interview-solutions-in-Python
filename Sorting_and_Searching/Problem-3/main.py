@@ -14,6 +14,7 @@ def search(_list, left, right, x):
         Integer: Index of the element if found else -1
     """
     mid = (left + right) // 2
+
     # Found the element
     if x == _list[mid]:
         return mid
@@ -24,43 +25,58 @@ def search(_list, left, right, x):
 
     # If left half is sorted
     if _list[left] < _list[mid]:
+
         # If value of x lies in between left element and mid element
         if _list[left] <= x <= _list[mid]:
+
             # Search the left half
             return search(_list, left, mid - 1, x)
         else:
+
             # Search the right half
             return search(_list, mid + 1, right, x)
+
     # If right half is sorted instead of left half
     elif _list[mid] < _list[left]:
+
         # If value of x lies in between mid element and right element
         if _list[mid] <= x <= _list[right]:
+
             # Search the right half
             return search(_list, mid + 1, right, x)
         else:
+
             # Search the left half
             return search(_list, left, mid - 1, x)
+
     # Left element is the same as mid element => all left half values are same
     elif _list[left] == _list[mid]:
+
         # If mid element is different from right element
         if _list[mid] != _list[right]:
+
             # Search the right half
             return search(_list, mid + 1, right, x)
+
         # If mid element is same as right element
         else:
+
             # Search the left half
             result = search(_list, left, mid - 1, x)
+
             # Not found
             if result == -1:
+
                 # Search the right half
                 return search(_list, mid + 1, right, x)
+
             # Found
             else:
                 return result
     return -1
 
 ls = [10, 15, 20, 0, 5]
-print(search(ls, 0, 4, 0))
+print(search(ls, 0, 4, 0))          # 3
 
 ls = [50, 5, 20, 30, 40]
-print(search(ls, 0, 4, 5))
+print(search(ls, 0, 4, 5))          # 1
